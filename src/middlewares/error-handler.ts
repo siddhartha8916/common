@@ -19,6 +19,8 @@ export const errorHandler = (
     res.status(404).json({ success: false, errors: [{ message }] });
   }
 
+  console.error(err)
+
   res
     .status(500)
     .json({ success: false, errors: [{ message: "Something Bad Occured" }] });
