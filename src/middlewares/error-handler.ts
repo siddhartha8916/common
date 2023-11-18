@@ -13,12 +13,6 @@ export const errorHandler = (
       .json({ success: false, errors: err.serializeErrors() });
   }
 
-  //  Wrong Mongodb Id error
-  if (err.name === "CastError") {
-    const message = `Resource not found.`;
-    res.status(404).json({ success: false, errors: [{ message }] });
-  }
-
   console.error(err)
 
   res
